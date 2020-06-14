@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.Home__header {
+  width: 100%;
+  background-color: #95e1d3;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.Home__header__inner {
+  max-width: 1800px;
+  margin: auto;
+  min-height: 500px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Home__header__content {
+  width: 700px;
+  text-align: center;
+}
+
+.Home__header__content h1 {
+  font-size: 48px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.Home__header__content a {
+  display: inline-block;
+  color: #fff;
+  background-color: #f38181;
+  padding: 20px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.Home__header__content a:hover {
+  background-color: #fff;
+  color: #f38181;
+  -webkit-box-shadow: 0px 0px 4px 5px #f38181;
+          box-shadow: 0px 0px 4px 5px #f38181;
+}
+
+.Home__body {
+  width: 100%;
+}
+
+.Home__body__inner {
+  max-width: 1800px;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 60px 30px;
+}
+
+.Home__body__map {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 30px;
+}
+
+.Home__body__restaurant {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 0px 30px;
+}
+
+@media (max-width: 450px) {
+  .Home__header__inner {
+    min-height: 350px;
+  }
+  .Home__header__content {
+    width: 350px;
+  }
+  .Home__header__content h1 {
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .Home__body__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .Home__body__map {
+    min-height: 300px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .Home__body__restaurant {
+    padding: 0;
+  }
+}
+
+.Home {
+  width: 100%;
+}
+
+.Home__navbar {
+  background-color: #95e1d3;
+}
+
+.Home__navbar__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding: 0 30px;
+}
+
+.Home__navbar__link {
+  text-decoration: none;
+  color: #121212;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=main.css.map */
