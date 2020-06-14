@@ -3,23 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="stylesheet/main.css" />
+
     <title>ResReview</title>
   </head>
   <body>
-    <nav>
-      <a href="#">ResReview</a>
-    </nav>
-    <header>
-      <h1>Review Restaurants and Cuisines</h1>
-      <a>Write a Reiview</a>
-    </header>
-    <div class="map">
-      <h1>map</h1>
+    <div class="Home">
+      <nav class="Home__navbar">
+        <div class="Home__navbar__inner">
+          <a href="/" class="Home__navbar__link">ResReview</a>
+        </div>
+      </nav>
+      <header class="Home__header">
+        <div class="Home__header__inner">
+          <div class="Home__header__content">
+            <h1>
+              Review <br />
+              Restaurants and Cuisines <br />
+              near you
+            </h1>
+            <a>Write a Reiview</a>
+          </div>
+        </div>
+      </header>
+      <div class="Home__body">
+        <div class="Home__body__inner">
+          <div class="Home__body__map" id="mapBox"></div>
+          <div class="Home__body__restaurant">
+            <h1>Nearby Restaurants</h1>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="restaurants">
-      <h1>List of nearby restaurants</h1>
-    </div>
-
+    <script id="jsonData" src="./places.json" type="application/json"></script>
     <script src="./build/app.bundle.js"></script>
   </body>
 </html>
