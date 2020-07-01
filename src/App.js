@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
+
+import Home from "./containers/Home";
 
 const App = () => {
-  return (
-    <h1>App</h1>
-  )
-}
+  return <Home />;
+};
 
 export default App;
