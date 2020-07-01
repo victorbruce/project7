@@ -1,5 +1,7 @@
 import React from "react";
-import MapGL, { GeolocateControl } from "react-map-gl";
+import MapGL, { GeolocateControl, Marker, Popup } from "react-map-gl";
+import restaurants from "../../shared/places.json";
+import Location from "../../components/Icons/Location";
 
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -14,10 +16,11 @@ class Map extends React.Component {
     viewPort: {
       width: "100%",
       height: "100%",
-      latitude: 0,
-      longitude: 0,
-      zoom: 2,
+      latitude: 55.657194,
+      longitude: 12.605452,
+      zoom: 10,
     },
+    selectedPlace: null,
   };
 
   onViewportChange = (viewPort) => {
@@ -37,6 +40,30 @@ class Map extends React.Component {
             positionOptions={{ enableHighAccuracy: true }}
             trackUserLocation={true}
           />
+          {restaurants.map((restaurant) => (
+            <>
+              <Marker
+                key={restaurant.palce_id}
+                latitude={restaurant.geometry.location.lat}
+                longitude={restaurant.geometry.location.lng}
+              >
+                <Location
+                 key={restaurant.palce_id}
+                  onClick={(e) => { console.log('clicked')}}
+                />
+              </Marker>
+              {this.state.selectedPlace ? (
+                <Popup
+                  longitude={this.state.selectedPlace.geometry.location.lng}
+                  latitude={this.state.selectedPlace.geometry.location.lat}
+                  closeButton={true}
+                  closeOnClick={true}
+                >
+                  {this.state.selectedPlace.name}
+                </Popup>
+              ) : null}
+            </>
+          ))}
         </MapGL>
       </div>
     );
