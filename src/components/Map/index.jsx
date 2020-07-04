@@ -47,10 +47,17 @@ class Map extends React.Component {
                 latitude={restaurant.geometry.location.lat}
                 longitude={restaurant.geometry.location.lng}
               >
-                <Location
-                 key={restaurant.palce_id}
-                  onClick={(e) => { console.log('clicked')}}
-                />
+                <button
+                  style={{ margin: "10px" }}
+                  onClick={() => this.setState({ selectedPlace: restaurant })}
+                >
+                  <Location
+                    key={restaurant.palce_id}
+                    onClick={(e) => {
+                      console.log("clicked");
+                    }}
+                  />
+                </button>
               </Marker>
               {this.state.selectedPlace ? (
                 <Popup
@@ -59,7 +66,7 @@ class Map extends React.Component {
                   closeButton={true}
                   closeOnClick={true}
                 >
-                  {this.state.selectedPlace.name}
+                  <h3>{this.state.selectedPlace.name}</h3>
                 </Popup>
               ) : null}
             </>
