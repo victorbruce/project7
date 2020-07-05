@@ -1,5 +1,7 @@
 import React from "react";
 import MapGL, { GeolocateControl, Marker, Popup } from "react-map-gl";
+import moment from "moment";
+import StarRatings from "react-star-ratings";
 import restaurants from "../../shared/places.json";
 import Location from "../../components/Icons/Location";
 
@@ -66,7 +68,35 @@ class Map extends React.Component {
                   closeButton={true}
                   closeOnClick={true}
                 >
-                  <h3>{this.state.selectedPlace.name}</h3>
+                  <h3 className="mb-3">{this.state.selectedPlace.name}</h3>
+                  <StarRatings
+                    rating={this.state.selectedPlace.rating}
+                    starRatedColor="gold"
+                    starDimension="20px"
+                    numberOfStars={5}
+                    name="rating"
+                  />
+                  <div>
+                    <h4 className="mt-5">Reviews</h4>
+                    <ul class="list-group mt-3 mb-3">
+                      {this.state.selectedPlace.reviews.map((review) => (
+                        <li class="list-group-item">
+                          <h5>
+                            <b>{review.author_name}</b>
+                          </h5>
+                          <p>{review.text}</p>
+                          <StarRatings
+                            rating={review.rating}
+                            starRatedColor="gold"
+                            starDimension="20px"
+                            numberOfStars={5}
+                            name="rating"
+                          />
+                          <p>{moment(review.time).format("LL")}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </Popup>
               ) : null}
             </>
