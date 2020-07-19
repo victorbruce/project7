@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
 
-import data from "../../shared/places.json";
-
 const Restaurants = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    function getData() {
+      if (localStorage.getItem("locations")) {
+        setData(JSON.parse(localStorage.getItem("locations")));
+      }
+    }
+
+    getData();
+  }, []);
+
   return (
     <div className="Restaurants">
       <ul className="list-group">
