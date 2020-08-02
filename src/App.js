@@ -1,24 +1,35 @@
-import React, { useEffect } from "react";
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Switch, Route } from "react-router-dom";
 
-import data from './shared/places.json';
+import data from "./shared/places.json";
 
 import Home from "./containers/Home";
 
 const App = () => {
+  const [locations, setLocations] = useState([]);
+
   useEffect(() => {
     function getLocations() {
-      if (localStorage.getItem('locations') === null) {
-        localStorage.setItem("locations", JSON.stringify(data))
+      if (localStorage.getItem("locations") === null) {
+        localStorage.setItem("locations", JSON.stringify(data));
+        setLocations({
+          locations: JSON.parse(localStorage.getItem("locations")),
+        });
+      } else {
+        setLocations(JSON.parse(localStorage.getItem("locations")));
       }
     }
 
     getLocations();
-  }, []);
+  }, [setLocations]);
 
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route
+        exact
+        path="/"
+        render={(props) => <Home locations={locations} />}
+      />
     </Switch>
   );
 };

@@ -21,13 +21,7 @@ const AppLayout = (props) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <Link to="/restaurants/add" className="nav-link">
-                  Add Restaurant
-                </Link>
-              </li>
-            </ul>
+            <ul className="navbar-nav"></ul>
           </div>
         </div>
       </nav>

@@ -5,7 +5,7 @@ import StarRatings from "react-star-ratings";
 import restaurants from "../../shared/places.json";
 import Location from "../../components/Icons/Location";
 
-const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
+const TOKEN = 'pk.eyJ1IjoidmljdG9yYnJ1Y2UiLCJhIjoiY2tiZjZ1dWpqMHNsZzMwcG0yd2l3cmpjdiJ9.aVSp1v_ucyTmqOcy-LSWNQ';
 
 const geolocateStyle = {
   float: "left",
@@ -30,7 +30,7 @@ class Map extends React.Component {
   };
   render() {
     return (
-      <div style={{ margin: "0 auto", height: "70vh" }}>
+      <div style={{ margin: "0 auto", height: "700px" }}>
         <MapGL
           {...this.state.viewPort}
           mapboxApiAccessToken={TOKEN}
@@ -43,9 +43,8 @@ class Map extends React.Component {
             trackUserLocation={true}
           />
           {restaurants.map((restaurant) => (
-            <>
+            <div key={restaurant.place_id}>
               <Marker
-                key={restaurant.palce_id}
                 latitude={restaurant.geometry.location.lat}
                 longitude={restaurant.geometry.location.lng}
               >
@@ -54,7 +53,7 @@ class Map extends React.Component {
                   onClick={() => this.setState({ selectedPlace: restaurant })}
                 >
                   <Location
-                    key={restaurant.palce_id}
+                    key={restaurant.place_id}
                     onClick={(e) => {
                       console.log("clicked");
                     }}
@@ -65,7 +64,7 @@ class Map extends React.Component {
                 <Popup
                   longitude={this.state.selectedPlace.geometry.location.lng}
                   latitude={this.state.selectedPlace.geometry.location.lat}
-                  closeButton={true}
+                  closeButton={false}
                   closeOnClick={true}
                 >
                   <h3 className="mb-3">{this.state.selectedPlace.name}</h3>
@@ -78,9 +77,12 @@ class Map extends React.Component {
                   />
                   <div>
                     <h4 className="mt-5">Reviews</h4>
-                    <ul class="list-group mt-3 mb-3">
+                    <ul className="list-group mt-3 mb-3">
                       {this.state.selectedPlace.reviews.map((review) => (
-                        <li class="list-group-item">
+                        <li
+                          className="list-group-item"
+                          key={review.author_name}
+                        >
                           <h5>
                             <b>{review.author_name}</b>
                           </h5>
@@ -99,7 +101,7 @@ class Map extends React.Component {
                   </div>
                 </Popup>
               ) : null}
-            </>
+            </div>
           ))}
         </MapGL>
       </div>

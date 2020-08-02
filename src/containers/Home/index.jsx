@@ -4,7 +4,7 @@ import AppLayout from "../../layouts/App";
 import Restaurants from "../Restaurants";
 import Map from "../../components/Map";
 
-const Home = () => {
+const Home = ({locations}) => {
   return (
     <AppLayout>
       <div className="Home">
@@ -13,7 +13,7 @@ const Home = () => {
             <Map />
           </div>
           <div className="col-md-4">
-            <Restaurants />
+            <Restaurants locations={locations} />
           </div>
         </div>
       </div>
