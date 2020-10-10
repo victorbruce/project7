@@ -34,7 +34,7 @@ const Restaurants = ({locations}) => {
           </span>
         </li>
         {isAddFormOpen && <AddRestaurant />}
-        {data ? data.map((place) => (
+        {(data && data.length > 0)`` ? data.map((place) => (
           <li className="list-group-item" key={place.place_id}>
             <p>
               <strong>{place.name}</strong>
