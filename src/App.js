@@ -9,6 +9,7 @@ const App = () => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
+    console.log(process.env.REACT_APP_NAME)
     function getLocations() {
       if (localStorage.getItem("locations") === null) {
         localStorage.setItem("locations", JSON.stringify(data));

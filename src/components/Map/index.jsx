@@ -5,7 +5,7 @@ import StarRatings from "react-star-ratings";
 import restaurants from "../../shared/places.json";
 import Location from "../../components/Icons/Location";
 
-const TOKEN = 'pk.eyJ1IjoidmljdG9yYnJ1Y2UiLCJhIjoiY2tiZjZ1dWpqMHNsZzMwcG0yd2l3cmpjdiJ9.aVSp1v_ucyTmqOcy-LSWNQ';
+const TOKEN = process.env.REACT_APP_TOKEN;
 
 const geolocateStyle = {
   float: "left",
