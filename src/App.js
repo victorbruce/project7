@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import data from "./shared/places.json";
 
 import Home from "./containers/Home";
+import Landing from './containers/Landing';
 
 const App = () => {
   const [locations, setLocations] = useState([]);
@@ -26,9 +27,9 @@ const App = () => {
 
   return (
     <Switch>
+      <Route exact path="/" component={Landing} />
       <Route
-        exact
-        path="/"
+        path="/home"
         render={(props) => <Home locations={locations} />}
       />
     </Switch>

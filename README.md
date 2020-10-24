@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Restaurant Review Site
 
-## Available Scripts
+## Demo Link
 
-In the project directory, you can run:
+Here is a live working solution of the application: [test-link](google.com)
 
-### `yarn start`
+## Table Of Content
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [About the app](#about-the-app)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Approach](#approach)
+- [Status](#status)
+- [Credits](#credits)
+- [License](#licence)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## About the app
 
-### `yarn test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
 
-### `yarn build`
+- React
+- Sass
+- Mapbox
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- clone the project from github
+-
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Approach
 
-### `yarn eject`
+I started this project by reading through the project's brief.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After understanding the requirements of the project, I sketched the layout and flow of the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Next, I jumped into figma to implement my the sketch and came up with a prototype of how the end product should look.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Using React library, I implemented the prototype as well as integrated a third-party library such as Mapbox for rendering locations on the map.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`Design Pattern and Architecture`
 
-## Learn More
+- `Folder Structure`: I used the 7-in-one folder structure achictecture to organise files and folders to ensure easy access and navigation within the project as well as set standards for future modifications.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `Naming conventions`: Followed the BEM guidelines for naming my css class.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Status
 
-### Code Splitting
+In progress
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Credits
 
-### Analyzing the Bundle Size
+[OpenClassrooms](https://openclassrooms.com/en/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+2020 @ [victorbruce](https://victorbruce.tech)
