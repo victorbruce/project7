@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "restaurant-review-development",
+    "production": "restaurant-review-a42f5",
+    "development": "restaurant-review-development"
+  }
+}
