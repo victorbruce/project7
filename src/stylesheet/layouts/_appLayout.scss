@@ -1,0 +1,51 @@
+.AppLayout {
+  width: 100%;
+
+  &__header {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+    height: 6rem;
+
+    & nav {
+      max-width: 120rem;
+      height: 100%;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+
+      & a {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--color-black);
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all .2s;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 13rem;
+          height: 1rem;
+          background: pink;
+          display: block;
+          position: absolute;
+          top: 1.3rem;
+          z-index: -1;
+          transform: skewX(20deg);
+        }
+        
+        &:hover {
+          transform: translateY(-3px);
+          color: #555;
+        }
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    position: relative;
+  }
+}
