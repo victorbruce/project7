@@ -41,7 +41,7 @@ class AddRestaurant extends Component {
   render() {
     const { name, vicinity, lng, lat } = this.state;
     return (
-      <div className="mx-auto">
+      <div className="Add_Restaurant">
         <div className="row py-5">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">

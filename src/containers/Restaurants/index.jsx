@@ -49,7 +49,7 @@ const Restaurants = ({locations}) => {
               name="rating"
             />
           </li>
-        )) : "No data"}
+        )) : <p>No data</p>}
       </ul>
     </div>
   );

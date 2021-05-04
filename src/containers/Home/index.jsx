@@ -1,23 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import AppLayout from "../../layouts/App";
-import Restaurants from "../Restaurants";
-import Map from "../../components/Map";
 
-const Home = ({locations}) => {
+const Home = () => {
   return (
-    <AppLayout>
-      <div className="Home">
-        <div className="row">
-          <div className="col-md-8">
-            <Map />
-          </div>
-          <div className="col-md-4">
-            <Restaurants locations={locations} />
+    <div className="Home">
+      <AppLayout>
+        <div className="Home__inner">
+          <div className="Home__content">
+            <h1 className="Home__title">Find the best restaurant near you!</h1>
+            <p className="Home__subtitle">
+              Get all the reviews for restaurants around you and make the best
+              choice!
+            </p>
+            <Link to="/places">Get Started</Link>
           </div>
         </div>
-      </div>
-    </AppLayout>
+      </AppLayout>
+    </div>
   );
 };
 

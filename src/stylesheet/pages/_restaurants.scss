@@ -1,0 +1,12 @@
+.Restaurants {
+  flex: 0 0 40%;
+
+  & ul > li.list-group-item > p {
+    font-size: 1.8rem;
+  }
+
+  & ul > p {
+    font-size: 1.8rem;
+    margin-top: 1.6rem;
+  }
+}

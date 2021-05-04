@@ -19,6 +19,8 @@ Here is a live working solution of the application: [test-link](google.com)
 
 ## Screenshots
 
+<img src="./src/assets/screenshot.png" />
+
 ## Technologies
 
 - React

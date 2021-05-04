@@ -1,36 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import data from "./shared/places.json";
-
-import Home from "./containers/Home";
-import Landing from './containers/Landing';
+import Places from "./containers/Places";
+import Home from './containers/Home';
 
 const App = () => {
-  const [locations, setLocations] = useState([]);
+  // const [locations, setLocations] = useState([]);
 
-  useEffect(() => {
-    console.log(process.env.REACT_APP_NAME)
-    function getLocations() {
-      if (localStorage.getItem("locations") === null) {
-        localStorage.setItem("locations", JSON.stringify(data));
-        setLocations({
-          locations: JSON.parse(localStorage.getItem("locations")),
-        });
-      } else {
-        setLocations(JSON.parse(localStorage.getItem("locations")));
-      }
-    }
+  // useEffect(() => {
+  //   function getLocations() {
+  //     if (localStorage.getItem("locations") === null) {
+  //       localStorage.setItem("locations", JSON.stringify(data));
+  //       setLocations({
+  //         locations: JSON.parse(localStorage.getItem("locations")),
+  //       });
+  //     } else {
+  //       setLocations(JSON.parse(localStorage.getItem("locations")));
+  //     }
+  //   }
 
-    getLocations();
-  }, [setLocations]);
+  //   getLocations();
+  // }, [setLocations]);
 
   return (
     <Switch>
-      <Route exact path="/" component={Landing} />
+      <Route exact path="/" component={Home} />
       <Route
-        path="/home"
-        render={(props) => <Home locations={locations} />}
+        path="/places"
+        component={Places}
       />
     </Switch>
   );
